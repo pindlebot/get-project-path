@@ -8,7 +8,7 @@ const IGNORE = [
 
 const getPathMaybe = options => glob('**/package.json', options)
   .then(paths =>
-    paths.length ? path.join(cwd, paths[paths.length - 1]) : undefined
+    paths.length ? path.join(options.cwd, paths[paths.length - 1]) : undefined
   )
 
 async function getProjectPath (opts = {}) {
